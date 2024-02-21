@@ -1,7 +1,25 @@
-.mat-dialog-container {
-  position: static;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Ajusta el z-index según sea necesario */
+ .profile {
+  font-size: 50px; /* Aumenta el tamaño original de 18px */
+}
+
+form {
+  background-color: black;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+body {
+  font-family:'Junge-Regular';
+  background-color: blanchedalmond;
+}
+
+.container {
+  max-width: 600px; /* Ajusta el ancho máximo como desees */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.form-group {
+  margin-bottom: 30px;
 }

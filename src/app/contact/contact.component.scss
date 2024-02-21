@@ -1,0 +1,31 @@
+  body{
+    font-family:'Junge-Regular';
+    background-color: blanchedalmond;
+  }
+
+.form-group {
+  justify-content: center;
+}
+
+form {
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.dates-contact {
+  display: flex;
+  /* Remove justify-content: space-between; */
+  margin: 0 auto;
+}
+
+.dates-contact input {
+  width: 50%; /* Añadido para dar espacio a cada campo */
+  margin-left: 19px;
+}
+
+.a input {
+  margin-left: 19px;
+}

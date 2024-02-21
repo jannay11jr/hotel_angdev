@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg nav">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between w-100">
+      <a class="navbar-brand" href="#">ANGDEV
+        <div class="stars-container">
+        <span *ngFor="let star of starsArray" class="material-icons">grade</span>
+      </div> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rooms" routerLinkActive="/rooms">Habitaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="/contact">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

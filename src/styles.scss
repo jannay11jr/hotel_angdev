@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+$purple-form: #B739ED;
+form{
+  background-color: $purple-form;
+}
+form:hover{
+  background-color: #8B00F0;
+}
+@font-face {
+  font-family: 'Junge-Regular';
+  src: url('./assets/fonts/Junge-Regular.ttf');
+}
+
+h1, h2, h3 {
+  font-family: 'Junge-Regular';
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

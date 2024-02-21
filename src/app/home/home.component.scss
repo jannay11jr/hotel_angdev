@@ -1,0 +1,50 @@
+body{
+  font-family:'Junge-Regular';
+  background-color: blanchedalmond;
+}
+
+$purple-web: #D765F3;
+$purple-messages: #ebb2f9;
+
+.hotel {
+  height: 300px;
+  width: 100%;
+}
+
+.banner {
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+.mensaje {
+  margin-top: 20px;
+}
+
+.subtitles {
+  text-align: center;
+}
+
+.img-spa {
+  margin-bottom: 40px;
+}
+
+.img-spa:hover{
+  transform: scale(1.1);
+  transition: 1000ms;
+}
+.jacuzzi {
+  background-color: $purple-web;
+}
+
+.scale-up-bottom{animation:scale-up-bottom 3.0s;
+}
+@keyframes scale-up-bottom
+{0%{transform:scale(.5);transform-origin:center bottom}
+100%{transform:scale(1);transform-origin:center bottom}}
+
+
+.tracking-in-expand-forward-top{animation:tracking-in-expand-forward-top 1.5s linear both} @keyframes tracking-in-expand-forward-top{0%{letter-spacing:-.2em;transform:translateZ(-700px) translateY(-100px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0) translateY(0);opacity:1}}
+
+
+.wobble-horizontal-bottom{animation:wobble-horizontal-bottom .8s linear both} @keyframes wobble-horizontal-bottom{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(-6deg)}30%{transform:translateX(15px) rotate(6deg)}45%{transform:translateX(-15px) rotate(-3.6deg)}60%{transform:translateX(9px) rotate(2.4deg)}75%{transform:translateX(-6px) rotate(-1.2deg)}}

@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -28,6 +29,7 @@ import { RegisterComponent } from './register/register.component'
     RegisterComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatDialogModule,
     FormsModule,

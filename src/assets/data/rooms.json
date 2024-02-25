@@ -5,7 +5,7 @@
       "description": "Acogedora y luminosa, la habitación Horizonte te invita a relajarte en un ambiente contemporáneo con toques tropicales. Disfruta de las vistas al mar mientras te preparas para explorar las maravillas de Puerto Rico.",
       "price": "2000",
       "img": [
-        ""
+        "./assets/imperial.jpg"
       ]
   },
   {
@@ -13,7 +13,7 @@
     "description": "Escápate al oasis de paz que te ofrece la suite Jardín Secreto. Déjate envolver por la decoración rústica y los detalles florales, y abre las puertas a tu jardín privado para disfrutar de un baño de sol o una cena bajo las estrellas.",
     "price": "5000",
     "img": [
-      ""
+      "./assets/jardin.jpg"
     ]
   },
   {

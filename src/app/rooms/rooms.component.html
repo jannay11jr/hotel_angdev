@@ -1,4 +1,13 @@
 <body>
-  <p>rooms works!</p>
-</body>
 
+  <ul>
+    <li *ngFor="let room of list_of_rooms">
+      <h2>{{ room.name }}</h2>
+      <p>{{ room.description }}</p>
+      <p>Precio: {{ room.price }}</p>
+      <p>Imagen: {{room.img }} </p>
+      <img src="{{room.img}}" alt="{{room.img}}">
+    </li>
+  </ul>
+
+</body>

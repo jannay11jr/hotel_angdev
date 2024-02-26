@@ -2,3 +2,29 @@ body{
   font-family:'Junge-Regular';
   background-color: blanchedalmond;
 }
+
+li {
+  list-style-type: none;
+}
+
+h2, h1 {
+  text-align: center;
+}
+
+h1{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.imgs-rooms{
+  display: flex;
+  justify-content: center;
+}
+
+img{
+  margin: 1%;
+  height: 10%;
+  width: 30%;
+
+}
+

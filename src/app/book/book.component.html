@@ -1,0 +1,21 @@
+<h1>Reservar habitación:</h1>
+
+<div class="row">
+<select class="form-select col-6 w-80" aria-label="Reservar habitacion">
+  <option selected class="form-select">Reservar habitación</option>
+  <option class="form-control" *ngFor="let name of name_of_rooms" value="'{{name.name}}'"> {{name.name}}</option>
+</select>
+
+<mat-form-field class="w-80">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="Start date">
+    <input matEndDate placeholder="End date">
+  </mat-date-range-input>
+  <mat-hint>El formato debe de ser MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+
+<button class="btn btn-dark w-80">Reservar</button>
+</div>

@@ -1,12 +1,14 @@
 <body>
+  <h1>Habitaciones de las que disponemos:</h1>
 
   <ul>
     <li *ngFor="let room of list_of_rooms">
       <h2>{{ room.name }}</h2>
       <p>{{ room.description }}</p>
-      <p>Precio: {{ room.price }}</p>
-      <p>Imagen: {{room.img }} </p>
-      <img src="{{room.img}}" alt="{{room.img}}">
+      <p>Precio: {{ room.price| currency : 'EUR' }} por noche  </p>
+      <div class="imgs-rooms">
+        <img *ngFor="let image of room.img" [src]="image" id="image">
+      </div>
     </li>
   </ul>
 

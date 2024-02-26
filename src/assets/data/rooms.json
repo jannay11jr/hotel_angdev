@@ -4,8 +4,7 @@
       "name": "Horizonte",
       "description": "Acogedora y luminosa, la habitación Horizonte te invita a relajarte en un ambiente contemporáneo con toques tropicales. Disfruta de las vistas al mar mientras te preparas para explorar las maravillas de Puerto Rico.",
       "price": "2000",
-      "img": [
-        "./assets/imperial.jpg"
+      "img": ["./assets/jardin.jpg","./assets/jardin.jpg" ,"./assets/jardin.jpg"
       ]
   },
   {
@@ -13,7 +12,7 @@
     "description": "Escápate al oasis de paz que te ofrece la suite Jardín Secreto. Déjate envolver por la decoración rústica y los detalles florales, y abre las puertas a tu jardín privado para disfrutar de un baño de sol o una cena bajo las estrellas.",
     "price": "5000",
     "img": [
-      "./assets/jardin.jpg"
+      "./assets/jardin.jpg", "./assets/jardin.jpg", "./assets/jardin.jpg"
     ]
   },
   {
@@ -21,7 +20,7 @@
   "description": "Elegancia y sofisticación te esperan en la suite VIP. Un espacioso salón independiente te invita a celebrar reuniones o simplemente a relajarte en un ambiente de lujo. Disfruta de las vistas a la ciudad o al mar mientras te deleitas con los detalles de diseño y los exclusivos amenities.",
   "price": "10000",
   "img": [
-    ""
+    "./assets/jardin.jpg", "./assets/jardin.jpg", "./assets/jardin.jpg"
   ]
   },
   {
@@ -29,7 +28,7 @@
     "description": "Experimenta el máximo lujo en el ático Imperial. Tu propio jacuzzi privado en la terraza te ofrece vistas panorámicas al mar y a la ciudad, mientras que el interior te recibe con una decoración opulenta y obras de arte originales. Un baño con sauna y servicio de mayordomo completan la experiencia de exclusividad.",
     "price": "10000",
     "img": [
-      ""
+      "./assets/jardin.jpg", "./assets/jardin.jpg", "./assets/jardin.jpg"
     ]
   }
 ]

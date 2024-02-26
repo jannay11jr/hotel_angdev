@@ -13,8 +13,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {MatDialogModule} from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BookComponent } from './book/book.component'
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -26,11 +32,19 @@ import { HttpClientModule } from '@angular/common/http'
     LoginComponent,
     RoomsComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    BookComponent,
+
   ],
   imports: [
+    MatNativeDateModule,
+    MatInputModule,
+    MatIconModule,
+
     HttpClientModule,
     BrowserModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
     MatDialogModule,
     FormsModule,
     BrowserModule,
@@ -41,6 +55,7 @@ import { HttpClientModule } from '@angular/common/http'
       {path: 'rooms', component: RoomsComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'bookingrooms', component: BookComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}
 

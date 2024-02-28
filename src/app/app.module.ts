@@ -8,7 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,10 +37,10 @@ import { MatIconModule } from '@angular/material/icon';
 
   ],
   imports: [
+    ReactiveFormsModule,
     MatNativeDateModule,
     MatInputModule,
     MatIconModule,
-
     HttpClientModule,
     BrowserModule,
     MatDatepickerModule,

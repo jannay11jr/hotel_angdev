@@ -9,27 +9,50 @@
     <p>Es necesario registrarse para poder reservar las habitaciones.</p>
   </div>
 
-  <form action="">
+  <form action="" (click)="onSubmit()" [formGroup]="register_form">
       <div class="form-group">
-      <input type="text" class="form-control" id="name" aria-describedby="Nombre" placeholder="Nombre">
+      <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="Nombre" placeholder="Nombre">
+      <div class="error alert alert-danger" *ngIf="register_form.get('name')?.hasError('required') && register_form.get('name')?.touched"> El nombre es obligatorio.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('name')?.hasError('minlength') && register_form.get('name')?.touched"> El nombre no puede contener menos de dos caracteres.</div>
       </div>
+
       <div class="form-group">
-      <input type="text" class="form-control" id="surname" aria-describedby="surname" placeholder="Apellidos">
+      <input type="text" class="form-control" id="surname" formControlName="surname" aria-describedby="surname" placeholder="Apellidos">
+      <div class="error alert alert-danger" *ngIf="register_form.get('surname')?.hasError('required') && register_form.get('surname')?.touched"> El apellido es obligatorio.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('surname')?.hasError('minlength') && register_form.get('surname')?.touched"> El nombre no puede contener menos de dos caracteres.</div>
       </div>
+
+
       <div class="form-group">
-      <input type="text" class="form-control" id="email" placeholder="Email">
+      <input type="text" class="form-control" id="email" formControlName="email" placeholder="Email">
+      <div class="error alert alert-danger" *ngIf="register_form.get('email')?.hasError('required') && register_form.get('email')?.touched"> El email es obligatorio.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('email')?.hasError('email') && register_form.get('email')?.touched"> El formato del email no es válido.</div>
       </div>
+
+
       <div class="form-group">
-      <input type="number" class="form-control" id="telephone" placeholder="Teléfono">
+      <input type="text" class="form-control" id="telephone" formControlName="telephone" placeholder="Teléfono">
+      <div class="error alert alert-danger" *ngIf="register_form.get('telephone')?.hasError('required') && register_form.get('telephone')?.touched"> El teléfono es obligatorio.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('telephone')?.hasError('pattern') && register_form.get('telephone')?.touched"> El telefono solo debe contener números</div>
+      <div class="error alert alert-danger" *ngIf="(register_form.get('telephone')?.hasError('minlength') || register_form.get('telephone')?.hasError('maxlength')) && register_form.get('telephone')?.touched"> El telefono debe de contener nueve numeros</div>
+
     </div>
+
+
       <div class="form-group">
-      <input type="password" class="form-control" id="password" placeholder="Contraseña">
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Contraseña">
       </div>
+
+
       <div class="form-group">
-      <input type="password" class="form-control" id="confirmpassword" placeholder="Confirmar contraseña">
+      <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password" placeholder="Confirmar contraseña">
+      <div class="error alert alert-danger" *ngIf="register_form.get('password')?.value !== register_form.get('confirm_password')?.value && register_form.get('confirm_password')?.touched"> Las contraseñas no coinciden, deben de ser las mismas.</div>
     </div>
-    <button type="submit" class="btn btn-dark">Registrarme</button>
+
+
+    <button type="submit" class="btn btn-dark" [disabled]="register_form.invalid">Registrarme</button>
   </form>
+
 
 </div>
 </div>

@@ -9,7 +9,7 @@
     <p>Es necesario registrarse para poder reservar las habitaciones.</p>
   </div>
 
-  <form action="" (click)="onSubmit()" [formGroup]="register_form">
+  <form action="" (ngSubmit)="onSubmit()" [formGroup]="register_form">
       <div class="form-group">
       <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="Nombre" placeholder="Nombre">
       <div class="error alert alert-danger" *ngIf="register_form.get('name')?.hasError('required') && register_form.get('name')?.touched"> El nombre es obligatorio.</div>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-group">
-      <input type="text" class="form-control" id="surname" formControlName="surname" aria-describedby="surname" placeholder="Apellidos">
+      <input type="text" class="form-control" id="surname" formControlName="surname" aria-describedby="Apellidos" placeholder="Apellidos">
       <div class="error alert alert-danger" *ngIf="register_form.get('surname')?.hasError('required') && register_form.get('surname')?.touched"> El apellido es obligatorio.</div>
       <div class="error alert alert-danger" *ngIf="register_form.get('surname')?.hasError('minlength') && register_form.get('surname')?.touched"> El nombre no puede contener menos de dos caracteres.</div>
       </div>
@@ -41,11 +41,17 @@
 
       <div class="form-group">
       <input type="password" class="form-control" id="password" formControlName="password" placeholder="Contraseña">
+      <div class="error alert alert-danger" *ngIf="register_form.get('password')?.hasError('required') && register_form.get('password')?.touched"> La contraseña es obligatoria.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('password')?.hasError('minlength') && register_form.get('password')?.touched"> La contraseña debe de tener un minimo de seis caracteres.</div>
+
+
       </div>
 
 
       <div class="form-group">
       <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password" placeholder="Confirmar contraseña">
+      <div class="error alert alert-danger" *ngIf="register_form.get('confirm_password')?.hasError('required') && register_form.get('confirm_password')?.touched"> La contraseña debe de repetirla.</div>
+      <div class="error alert alert-danger" *ngIf="register_form.get('confirm_password')?.hasError('minlength') && register_form.get('confirm_password')?.touched"> La contraseña repetida debe de tener un minimo de seis caracteres.</div>
       <div class="error alert alert-danger" *ngIf="register_form.get('password')?.value !== register_form.get('confirm_password')?.value && register_form.get('confirm_password')?.touched"> Las contraseñas no coinciden, deben de ser las mismas.</div>
     </div>
 

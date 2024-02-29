@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit{
     surname : ['', [Validators.required, Validators.minLength(3)]],
     email :['', [Validators.required, Validators.email]],
     telephone :['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern('^[0-9]*$')]],
-    password :['',Validators.required, Validators.minLength(6)],
-    confirm_password : ['', Validators.required, Validators.minLength(6)],
+    password :['',[Validators.required, Validators.minLength(6)]],
+    confirm_password : ['', [Validators.required, Validators.minLength(6)]],
     });
 
 

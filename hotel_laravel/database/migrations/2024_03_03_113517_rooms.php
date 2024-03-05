@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->integer('price');
-            $table->rememberToken();
-            $table->timestamps();
-            $table->foreign('id_booking')->references('id')->on('bookings');
+        $table->id();
+        $table->string('name');
+        $table->string('description');
+        $table->integer('price');
+        $table->boolean('available')->default(true); // Columna para rastrear la disponibilidad de la habitación
+        $table->timestamps();
         });
     }
 

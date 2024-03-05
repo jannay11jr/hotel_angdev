@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('date_in');
-            $table->string('date_out');
-            $table->string('id_room');
-            $table->rememberToken();
+            $table->date('date_in');
+            $table->date('date_out');
+            $table->unsignedBigInteger('id_room');
             $table->timestamps();
+
             $table->foreign('id_room')->references('id')->on('rooms');
+            $table->unique(['date_in', 'date_out', 'id_room']); // Índice único para evitar superposiciones de reserva
         });
     }
 

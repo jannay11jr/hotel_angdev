@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('id_booking')->references('id')->on('bookings');
-            $table->foreign('id_room')->references('id')->on('rooms');
         });
     }
 

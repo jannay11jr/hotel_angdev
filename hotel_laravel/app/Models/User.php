@@ -46,11 +46,4 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-    public function rooms(){
-        return $this->hasMany(Room::class);
-    }
-
-    public function bookings(){
-        return $this->hasMany(Booking::class);
-    }
 }

@@ -1,38 +1,40 @@
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {Form, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {}
   register_form!: FormGroup;
 
+  constructor(private fb: FormBuilder, private http: HttpClient, private userService: UserService) {}
 
   ngOnInit(): void {
-
-
-    this.register_form = this.fb.group ({
-    name :['', [Validators.required, Validators.minLength(3)]],
-    surname : ['', [Validators.required, Validators.minLength(3)]],
-    email :['', [Validators.required, Validators.email]],
-    telephone :['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern('^[0-9]*$')]],
-    password :['',[Validators.required, Validators.minLength(6)]],
-    confirm_password : ['', [Validators.required, Validators.minLength(6)]],
+    this.register_form = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      surname: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      telephone: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern('^[0-9]*$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirm_password: ['', [Validators.required, Validators.minLength(6)]],
     });
-
-
-
-
-
   }
+
   onSubmit() {
-    console.log(this.register_form.value);
+    if (this.register_form.valid) {
+      this.userService.createUser(this.register_form.value).subscribe(
+        (response: HttpResponse<any>) => {
+          console.log(response);
+        },
+        (error: HttpErrorResponse) => {
+          console.log(error);
+        }
+      );
+    }
   }
-
-
-
 }

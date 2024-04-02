@@ -9,7 +9,7 @@
     <p>Es necesario registrarse para poder reservar las habitaciones.</p>
   </div>
 
-  <form action="" (ngSubmit)="onSubmit()" [formGroup]="register_form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="register_form">
       <div class="form-group">
       <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="Nombre" placeholder="Nombre">
       <div class="error alert alert-danger" *ngIf="register_form.get('name')?.hasError('required') && register_form.get('name')?.touched"> El nombre es obligatorio.</div>

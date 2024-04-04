@@ -2,6 +2,8 @@ import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/htt
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -11,8 +13,10 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnInit {
 
   register_form!: FormGroup;
-
-  constructor(private fb: FormBuilder, private http: HttpClient, private userService: UserService) {}
+  router: Router;
+  constructor(private fb: FormBuilder, private http: HttpClient, private userService: UserService, _router: Router) {
+    this.router = _router;
+  }
 
   ngOnInit(): void {
     this.register_form = this.fb.group({
@@ -26,9 +30,11 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+
     if (this.register_form.valid) {
       this.userService.createUser(this.register_form.value).subscribe(
         (response: HttpResponse<any>) => {
+          this.router.navigate(['/successregister']);
           console.log(response);
         },
         (error: HttpErrorResponse) => {

@@ -8,14 +8,13 @@
         <p>Es necesario iniciar sesión para poder reservar tu habitación de hotel.</p>
       </div>
 
-      <form action="" >
+      <form (ngSubmit)="onSubmit()" [formGroup]="login_form" >
         <div class="form-group">
-          <input type="text" class="form-control email" id="nombre" placeholder="Email">
-          <p>El email es incorrecto</p>
-          <input type="password" class="form-control mt-2 pass" id="password" placeholder="Contraseña">
-          <p>La contraseña es incorrecta</p>
+          <input type="email" class="form-control email" id="email" formControlName="email"  placeholder="Email" required>
+          <p></p>
+          <input type="password" class="form-control mt-2 pass" id="password" formControlName="password"  placeholder="Contraseña" required>
         </div>
-        <button class="btn btn-dark btn-block mt-2">Iniciar sesión</button>
+        <button class="btn btn-dark btn-block mt-2" [disabled]="login_form.invalid">Iniciar sesión</button>
       </form>
 
       <p class="text-center mt-2 register"><a class="nav-link" routerLink="/register" routerLinkActive="/register"> En caso de no estar registrado pincha aquí</a></p>

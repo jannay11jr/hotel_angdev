@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { SuccessregisterComponent } from './successregister/successregister.component';
 
 
 
@@ -34,7 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
     HomeComponent,
     RegisterComponent,
     BookComponent,
-
+    SuccessregisterComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -56,6 +57,7 @@ import { MatIconModule } from '@angular/material/icon';
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'bookingrooms', component: BookComponent},
+      {path: 'successregister', component: SuccessregisterComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}
 

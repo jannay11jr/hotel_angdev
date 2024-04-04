@@ -12,6 +12,11 @@ form {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.form-wrapper{
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
 body {
   font-family:'Junge-Regular';
   background-color: blanchedalmond;
@@ -25,5 +30,10 @@ body {
 .form-group {
   margin-bottom: 30px;
 }
+
+.btn_register {
+  margin-bottom: 30px;
+}
+
 
 

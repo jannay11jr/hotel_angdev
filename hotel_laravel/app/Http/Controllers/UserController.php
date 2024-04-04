@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    function create(Request $request) {
+    public function create(Request $request) {
         $user = new User();
         $user->name = $request->name;
         $user->surname = $request->surname;
@@ -18,5 +19,19 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Usuario creado con éxito', 'user' => $user]);
 
+    }
+
+    public function store (Request $request){
+
+        $credentials = $request ->only('email','password');
+
+        if (Auth::attempt($credentials, $request->filled('remember'))) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/');
+        }
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 }

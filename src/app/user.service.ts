@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
+
+
   constructor(private http: HttpClient) {
     console.log('Servicio user corriendo');
    }
@@ -16,6 +18,9 @@ export class UserService {
    }
 
    loginUser(userData:any): Observable<any>{
-    return this.http.post('http://localhost:8000/api/users/store', userData);
+    const requestOptions = {
+      withCredentials: true
+    };
+    return this.http.post('http://localhost:8000/api/users/store', userData, requestOptions);
    }
 }

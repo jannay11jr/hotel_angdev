@@ -14,7 +14,7 @@ class UserController extends Controller
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->telephone = $request->telephone;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->save();
 
         return response()->json(['message' => 'Usuario creado con éxito', 'user' => $user]);

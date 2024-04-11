@@ -22,5 +22,3 @@ use App\Http\Controllers\UserController;
 Route::post('/users/create', [UserController::class, 'create']);
 
 Route::middleware('web')->post('/users/store', [UserController::class, 'store']);
-
-

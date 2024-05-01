@@ -33,8 +33,12 @@ export class LoginComponent {
     this.getCsrfToken().subscribe();
   }
 
-
   getCsrfToken(): Observable<any> {
+    return this.http.get<any>('http://localhost:8000/csrf-token');
+  }
+
+
+  /*getCsrfToken(): Observable<any> {
     return this.http.get<any>('http://localhost:8000/csrf-token').pipe(
       tap(response => {
         const csrfToken = response.csrf_token;
@@ -46,7 +50,7 @@ export class LoginComponent {
         return of(null);
       })
     );
-  }
+  } */
 
 
   onSubmit(){
@@ -55,7 +59,7 @@ export class LoginComponent {
         (response: HttpResponse<any>) => {
           console.log(response, "Se inició sesión con éxito");
         },
-        (error: HttpErrorResponse) => {
+        (error) => {
           console.log(error);
         }
       );

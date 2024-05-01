@@ -23,15 +23,24 @@ class UserController extends Controller
 
     public function store (Request $request){
 
-        $credentials = $request->only('email','password');
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/');
-        }
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
+
+        if(!Auth::attempt($credentials)){
+            return response()->json(['authorized'=> false], 201);
+        }
+
+        $user = User::where('email', $request->user()->email)->first();
+
+
+        $token = $user->createToken('authToken', [], null)->plainTextToken;
+
+        return response()->json([
+            'authorized' => true,
+            'user' => $user,
+            'token' => $token
+        ], 200);
     }
 }

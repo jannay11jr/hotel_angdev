@@ -15,10 +15,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
 Route::post('/users/create', [UserController::class, 'create']);
 
-Route::middleware('web')->post('/users/store', [UserController::class, 'store']);
+Route::post('/users/store', [UserController::class, 'store']);

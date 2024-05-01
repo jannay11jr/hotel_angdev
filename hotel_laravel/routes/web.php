@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{any}', function () {
-    return view('home');
-})->where('any', '.*');
-
-
 Route::get('/csrf-token', function() {
     return response()->json(['csrf_token' => csrf_token()]);
 });
+
+Route::get('/{any}', function () {
+    return view('home');
+})->where('any', '^(?!csrf-token).*$');
 
 

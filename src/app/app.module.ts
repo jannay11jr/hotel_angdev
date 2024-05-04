@@ -23,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { SuccessregisterComponent } from './successregister/successregister.component';
 import { LoginInterceptor } from './login/login.interceptor';
+import { SuccessloginComponent } from './successlogin/successlogin.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -37,6 +39,7 @@ import { LoginInterceptor } from './login/login.interceptor';
     RegisterComponent,
     BookComponent,
     SuccessregisterComponent,
+    SuccessloginComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -57,8 +60,9 @@ import { LoginInterceptor } from './login/login.interceptor';
       {path: 'rooms', component: RoomsComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      {path: 'bookingrooms', component: BookComponent},
+      {path: 'bookingrooms', component: BookComponent, canActivate: [AuthGuard]},
       {path: 'successregister', component: SuccessregisterComponent},
+      {path: 'successlogin', component: SuccessloginComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}
 

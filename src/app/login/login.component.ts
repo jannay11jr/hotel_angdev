@@ -37,27 +37,13 @@ export class LoginComponent {
     return this.http.get<any>('http://localhost:8000/csrf-token');
   }
 
-
-  /*getCsrfToken(): Observable<any> {
-    return this.http.get<any>('http://localhost:8000/csrf-token').pipe(
-      tap(response => {
-        const csrfToken = response.csrf_token;
-        localStorage.setItem('csrf_token', csrfToken);
-        console.log('Token CSRF obtenido:', csrfToken);
-      }),
-      catchError(error => {
-        console.error('Error al obtener el token CSRF:', error);
-        return of(null);
-      })
-    );
-  } */
-
-
   onSubmit(){
     if (this.login_form.valid) {
       this.userService.loginUser(this.login_form.value).subscribe(
         (response: HttpResponse<any>) => {
           console.log(response, "Se inició sesión con éxito");
+          this.router.navigate(['/successlogin']);
+
         },
         (error) => {
           console.log(error);

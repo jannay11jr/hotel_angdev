@@ -21,6 +21,10 @@ class UserController extends Controller
 
     }
 
+    public function logout(Request $request) {
+        Auth::logout();
+    }
+
     public function store (Request $request){
 
         $credentials = $request->validate([

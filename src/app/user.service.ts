@@ -25,4 +25,6 @@ export class UserService {
     return this.http.get<any>('http://localhost:8000/csrf-token');
   }
 
+  isAuth(): boolean {
+    return !!localStorage.getItem('token')  }
 }

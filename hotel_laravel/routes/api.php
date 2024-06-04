@@ -18,3 +18,6 @@ use App\Http\Controllers\UserController;
 Route::post('/users/create', [UserController::class, 'create']);
 
 Route::post('/users/store', [UserController::class, 'store']);
+
+Route::post('/users/logout', [UserController::class, 'logout']);
+

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,13 @@ export class UserService {
    }
 
    loginUser(credentials: any): Observable<any> {
-    return this.http.post('http://localhost:8000/api/users/store', credentials);
+    return this.http.post('http://localhost:8000/api/users/store', credentials).pipe(
+      tap((response:any) => {
+        if(response && response.token) {
+          sessionStorage.setItem('token', response.token);
+      }
+    })
+    );
   }
 
   getCsrfToken(): Observable<any> {
@@ -26,5 +32,10 @@ export class UserService {
   }
 
   isAuth(): boolean {
-    return !!localStorage.getItem('token')  }
+    return !!sessionStorage.getItem('token')  }
+
+  logout(): void {
+    sessionStorage.removeItem('token');
+    sessionStorage.clear();
+  }
 }

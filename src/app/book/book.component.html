@@ -1,31 +1,29 @@
 <body>
   <div class="container mb-3">
-  <div class="text-center mt-2">
-  <span class="material-icons profile">hotel</span>
-<h2 class="text-center">Reservar habitación:</h2>
+    <div class="text-center mt-2">
+      <span class="material-icons profile">hotel</span>
+      <h2 class="text-center">Reservar habitación:</h2>
     </div>
-    <form action="" class="text-center mt-3">
-<div class="row">
-<select class="form-select col-6 w-80" aria-label="Reservar habitacion" style="width: 50%;">
-  <option selected class="form-select">Reservar habitación</option>
-  <option class="form-control" *ngFor="let name of name_of_rooms" value="'{{name.name}}'"> {{name.name}}</option>
-</select>
+    <form (ngSubmit)="sendWhatsAppMessage()" class="text-center mt-3">
+      <div class="row">
+        <select [(ngModel)]="selectedRoom" class="form-select col-6 w-80" name="room" required style="width: 50%;">
+          <option value="" disabled selected>Reservar habitación</option>
+          <option *ngFor="let room of name_of_rooms" [value]="room.name">{{ room.name }}</option>
+        </select>
 
-<mat-form-field style="width: 50%;">
-  <mat-label>Enter a date range</mat-label>
-  <mat-date-range-input [rangePicker]="picker">
-    <input matStartDate placeholder="Start date">
-    <input matEndDate placeholder="End date">
-  </mat-date-range-input>
-  <mat-hint>El formato debe de ser MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-date-range-picker #picker></mat-date-range-picker>
-</mat-form-field>
+        <mat-form-field style="width: 50%;">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate [(ngModel)]="startDate" name="startDate" placeholder="Start date" required>
+            <input matEndDate [(ngModel)]="endDate" name="endDate" placeholder="End date" required>
+          </mat-date-range-input>
+          <mat-hint>El formato debe de ser MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
 
-<button class="btn btn-dark w-80">Reservar</button>
-</div>
-</form>
-</div>
-
-
+        <button type="submit" class="btn btn-dark w-80">Reservar</button>
+      </div>
+    </form>
+  </div>
 </body>

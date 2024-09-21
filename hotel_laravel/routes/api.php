@@ -3,11 +3,14 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
-|--------------------------------------------------------------------------
+|-------------------------------------------
+-------------------------------
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
@@ -20,4 +23,6 @@ Route::post('/users/create', [UserController::class, 'create']);
 Route::post('/users/store', [UserController::class, 'store']);
 
 Route::post('/users/logout', [UserController::class, 'logout']);
+
+Route::post('/contact', [ContactController::class, 'sendContactEmail']);
 

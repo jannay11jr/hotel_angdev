@@ -1,30 +1,32 @@
-<div class="container mb-3">
-  <div class="text-center mt-2">
+<div class="container mb-3 mt-2">
+  <div class="header text-center mt-2">
     <span class="material-icons profile">email</span>
     <h2>Contacto</h2>
   </div>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="text-center mt-3">
-    <div class="form-group dates-contact">
-      <input type="text" formControlName="tlf" class="form-control" placeholder="Teléfono">
-      <input type="email" formControlName="email" class="form-control a" placeholder="Email">
-    </div>
+  <div class="form-wrapper">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="text-center mt-3 contact-form">
+      <div class="form-group dates-contact">
+        <input type="text" formControlName="tlf" class="form-control" placeholder="Teléfono">
+        <input type="email" formControlName="email" class="form-control" placeholder="Email">
+      </div>
 
-    <div class="form-group dates-contact mt-2">
-      <input type="text" formControlName="name" class="form-control" placeholder="Nombre">
-      <input type="text" formControlName="subject" class="form-control a" placeholder="Asunto">
-    </div>
+      <div class="form-group dates-contact mt-2">
+        <input type="text" formControlName="name" class="form-control" placeholder="Nombre">
+        <input type="text" formControlName="subject" class="form-control" placeholder="Asunto">
+      </div>
 
-    <div class="form-group">
-      <label for="description" class="sr-only">Descripción</label>
-      <textarea formControlName="description" class="form-control" cols="30" rows="5" placeholder="Describe tu consulta"></textarea>
-    </div>
+      <div class="form-group">
+        <label for="description" class="sr-only">Descripción</label>
+        <textarea formControlName="description" class="form-control" cols="30" rows="5" placeholder="Describe tu consulta"></textarea>
+      </div>
 
-    <div class="form-check">
-      <input class="form-check-input" formControlName="validate_human" type="checkbox">
-      <label class="form-check-label">
-        Confirmo que no soy un robot
-      </label>
-    </div>
-    <button type="submit" class="btn btn-dark mt-3" [disabled]="!contactForm.valid">Enviar</button>
-  </form>
+      <div class="form-check">
+        <input class="form-check-input" formControlName="validate_human" type="checkbox">
+        <label class="form-check-label">
+          Confirmo que no soy un robot
+        </label>
+      </div>
+      <button type="submit" class="btn btn-dark mt-3" [disabled]="!contactForm.valid">Enviar</button>
+    </form>
+  </div>
 </div>

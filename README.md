@@ -1,33 +1,31 @@
-## ¡En construcción! ⚠️
+# Hotel Angdev
 
-Este repositorio está en construcción y aún no está listo para ser utilizado. 
+Este proyecto representa una página web de un hotel desarrollada en Angular y Laravel, diseñada para gestionar las reservas, visibilidad y contacto entre hotel y cliente.
 
-Te animo mientras tanto a que te pases por otros repositorios que tengo en mi GitHub.
+## Descripción del Proyecto
 
-# Hotel
+La página web permite realizar diversas operaciones relacionadas con el hotel. Estas operaciones incluyen el registro de usuarios para poder reservar la habitación, la reserva de habitaciones disponibles y el formulario de contacto entre hotel y cliente.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Menú y funcionamiento de la aplicación
 
-## Development server
+En el programa se mostrará un menú inicial con las distintas opciones que podremos ejecutar y probar:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. "Home": Permite ver la página principal del hotel.
+2. "Habitaciones": Mostrará el listado, descripción y precio de habitaciones junto con sus fotos (todo esto lo hará leyendo un archivo JSON).
+3. "Contacto": Formulario de contacto pueda ponerse en contacto con el hotel.
+4. "Reservar": El cliente escogerá fecha y habitación y al darle a reservar se abrirá WhatsApp donde mandará un mensaje personalizado con la fecha y el tipo de habitación que ha escogido preguntando al hotel si hay disponibilidad.
+5. "Login": Tendremos un formulario para iniciar sesión y un apartado para registrarnos en caso de que no lo hayamos hecho.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La web incluye "guards" para que si al acceder al apartado del menú "Reserva" no hemos iniciado sesión antes no nos deje entrar y nos lleve al menú home.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+A tener en cuenta:
+- Para el envío del formulario, se debe de editar el archivo ".env" y tocar los siguiente:
 
-## Running unit tests
+"MAIL_USERNAME=tu_email@gmail.com
+MAIL_PASSWORD=tupasssword_
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=tu_email@gmail.com"
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- En el caso del WhatsApp para hacer llegar ese mensaje de WhatsApp a un número de teléfono determinado deberíamos de poner el del hotel en la variable whatsappPhoneNumber que se encuentra dentro de "book.component.ts"

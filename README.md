@@ -23,9 +23,9 @@ La web incluye "guards" para que si al acceder al apartado del menú "Reserva" n
 A tener en cuenta:
 - Para el envío del formulario, se debe de editar el archivo ".env" y tocar los siguiente:
 
-"MAIL_USERNAME=tu_email@gmail.com
+``` MAIL_USERNAME=tu_email@gmail.com
 MAIL_PASSWORD=tupasssword_
 MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=tu_email@gmail.com"
+MAIL_FROM_ADDRESS=tu_email@gmail.com ```
 
 - En el caso del WhatsApp para hacer llegar ese mensaje de WhatsApp a un número de teléfono determinado deberíamos de poner el del hotel en la variable whatsappPhoneNumber que se encuentra dentro de "book.component.ts"
